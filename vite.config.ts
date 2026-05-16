@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // https://charlene00sara-gif.github.io/ (GitHub user Pages)
-  base: '/',
+  // Set PAGES_BASE for project site; default '/' = user site (github.io)
+  base: process.env.PAGES_BASE ?? '/',
   plugins: [react()],
   resolve: {
     alias: {
