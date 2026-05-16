@@ -8,7 +8,7 @@ export function LightTrails() {
         className="planet-scene__img"
         src="/images/planet-neon.png"
         alt=""
-        width={746}
+        width={718}
         height={1024}
         loading="lazy"
         decoding="async"
