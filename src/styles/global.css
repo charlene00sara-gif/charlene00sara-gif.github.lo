@@ -10,6 +10,11 @@
   --accent-mid: #00cc66;
   --accent-dark: #0a2e14;
   --accent-glow: rgba(57, 255, 20, 0.55);
+  /* NEW SOLO–style gradient: green → cyan → lavender */
+  --grad-green: #39ff14;
+  --grad-mint: #7dffc8;
+  --grad-cyan: #5ee7ff;
+  --grad-lavender: #c4b5fd;
   --green: var(--accent);
   --green-bright: var(--accent-bright);
   --green-mid: var(--accent-mid);
@@ -28,6 +33,20 @@
   --nav-height: 64px;
   --margin-desktop: 64px;
   --margin-mobile: 16px;
+  --gradient-text: linear-gradient(
+    90deg,
+    var(--grad-green) 0%,
+    var(--grad-mint) 32%,
+    var(--grad-cyan) 58%,
+    var(--grad-lavender) 100%
+  );
+}
+
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .font-cn {
@@ -78,15 +97,28 @@ body::before {
   display: none;
 }
 
+.page-gradient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    108deg,
+    rgba(57, 255, 20, 0.2) 0%,
+    rgba(125, 255, 200, 0.14) 22%,
+    rgba(94, 231, 255, 0.12) 42%,
+    rgba(196, 181, 253, 0.08) 58%,
+    transparent 72%
+  );
+}
+
 .crt-vignette {
   position: fixed;
   inset: 0;
   background:
-    /* green diffuse — left page background (soft, compact) */
-    radial-gradient(ellipse 38% 36% at 22% 50%, rgba(140, 255, 160, 0.09), transparent 52%),
-    radial-gradient(ellipse 28% 28% at 14% 52%, rgba(100, 240, 180, 0.05), transparent 48%),
-    /* right stays pure black */
-    linear-gradient(to left, #000 55%, transparent 72%),
+    radial-gradient(ellipse 36% 34% at 20% 50%, rgba(57, 255, 20, 0.12), transparent 56%),
+    radial-gradient(ellipse 28% 28% at 30% 48%, rgba(94, 231, 255, 0.08), transparent 52%),
+    linear-gradient(to left, #000 52%, transparent 70%),
     radial-gradient(circle, transparent 34%, rgba(0, 0, 0, 0.5) 100%);
   pointer-events: none;
   z-index: 2;
@@ -286,10 +318,13 @@ button {
 .navbar__brand {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--accent);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  text-shadow: 0 0 16px var(--accent-glow);
+  filter: drop-shadow(0 0 14px rgba(94, 231, 255, 0.4));
   cursor: pointer;
   text-decoration: none;
 }
@@ -317,9 +352,9 @@ button {
 }
 
 .navbar__link--active {
-  color: var(--green);
-  border-bottom: 2px solid var(--green);
-  text-shadow: 0 0 5px var(--green-glow);
+  color: var(--grad-cyan);
+  border-bottom: 2px solid var(--grad-cyan);
+  text-shadow: 0 0 8px rgba(94, 231, 255, 0.5);
 }
 
 .navbar__icon {
@@ -390,15 +425,11 @@ button {
 }
 
 .home__creator-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.15rem;
   margin-bottom: 1.25rem;
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--accent);
-  text-shadow: 0 0 20px var(--accent-glow);
+  letter-spacing: 0.12em;
+  filter: drop-shadow(0 0 14px rgba(94, 231, 255, 0.35));
 }
 
 .home__creator-bar {
@@ -431,10 +462,9 @@ button {
 
 .home__slogan-cn {
   font-size: clamp(1.35rem, 3.5vw, 2rem);
-  color: var(--accent);
-  text-shadow: 0 0 28px var(--accent-glow);
   margin-bottom: 0.35rem;
   letter-spacing: 0.06em;
+  filter: drop-shadow(0 0 22px rgba(94, 231, 255, 0.45));
 }
 
 .home__slogan-en {

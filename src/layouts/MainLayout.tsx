@@ -10,6 +10,7 @@ export function MainLayout() {
 
   return (
     <div className="layout layout--fixed-footer">
+      <div className="page-gradient" aria-hidden="true" />
       <div className="crt-vignette" aria-hidden="true" />
 
       {!loaded && <TVLoader onComplete={handleLoaded} />}

@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 
-const CREATOR_CHARS = ['共', '创', '者', '星', '球']
-
 export function HomePage() {
   const navigate = useNavigate()
 
@@ -13,14 +11,9 @@ export function HomePage() {
         <span className="home__masthead-brand font-en">Charlene</span>
       </header>
 
-      <div className="home__creator-row font-cn">
-        {CREATOR_CHARS.map((char, i) => (
-          <span key={char} className="home__creator-item">
-            {i > 0 && <span className="home__creator-bar">|</span>}
-            <span>{char}</span>
-          </span>
-        ))}
-      </div>
+      <p className="home__creator-row font-cn text-gradient">
+        共 | 创 | 者 | 星 | 球
+      </p>
 
       <h1 className="home__hero-cn font-cn-display">
         Hi，charlene
@@ -29,7 +22,7 @@ export function HomePage() {
       <p className="home__hero-en font-en">TECHNOLOGY · INSIGHT · FUTURE</p>
 
       <div className="home__slogan-block">
-        <p className="home__slogan-cn font-cn-display">科技，洞见未来</p>
+        <p className="home__slogan-cn font-cn-display text-gradient">科技，洞见未来</p>
         <p className="home__slogan-en font-en">有为探索 · 时光正好</p>
       </div>
 
