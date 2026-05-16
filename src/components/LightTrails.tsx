@@ -1,4 +1,4 @@
-/** Cyber neon planet — particle surface + ring system (reference asset). */
+/** Neon green ringed planet (user asset, transparent PNG). */
 export function LightTrails() {
   return (
     <div className="planet-scene" aria-hidden="true">
@@ -8,7 +8,7 @@ export function LightTrails() {
         className="planet-scene__img"
         src="/images/planet-neon.png"
         alt=""
-        width={718}
+        width={682}
         height={1024}
         loading="lazy"
         decoding="async"

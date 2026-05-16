@@ -1,6 +1,6 @@
 # Charlene — Personal Site
 
-React + Vite portfolio. Hosted on [GitHub Pages](https://charlene00sara-gif.github.io/charlene00sara-gif.github.lo/) via the `/docs` folder.
+React + Vite portfolio. Hosted on [GitHub Pages](https://charlene00sara-gif.github.io/) via the `/docs` folder.
 
 ## Develop
 

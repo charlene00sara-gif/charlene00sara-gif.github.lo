@@ -4,11 +4,17 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/charlene00sara-gif.github.lo/',
+  // https://charlene00sara-gif.github.io/ (GitHub user Pages)
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+  },
+  server: {
+    port: 5173,
+    strictPort: false,
+    open: true,
   },
 })
